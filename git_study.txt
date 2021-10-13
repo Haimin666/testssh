@@ -1,0 +1,44 @@
+工作区：写代码
+暂存区：临时存
+本地库：历史版本
+git命令行:
+本地：
+    初始化：git init  --> 生成.git
+    设置签名：
+        username：andy-wang
+            项目级别：仅在当前本地仓库有效
+            用户级别：对当前操作系统有效
+            git config --global user.name andy-wang
+            git config --global user.email andy.wang@paytm.com
+        email：andy.wang@paytm.com
+        这里签名和托管中心无任何关系
+        ls -la
+    状态：git status
+    git add xxx    文件放在暂存区
+    git rm --cached xxx 从暂存区退出了
+    git commit xxx  提交并且写入注释
+    git commit -m "my first commit" hello.txt
+    查历史记录
+    git log    HEAD指向当前版本
+    git log --oneline
+    git reflog  移动版本
+    版本前进后退
+    索引：git reset --hard 索引值
+    ^：只能往后退  git reset --hard HEAD^    //HEAD^^、HEAD~3
+    ～:只能往后退  git reset --hard HEAD~3
+    文件删除恢复：删除前，文件存在状态提交了本地库
+        回退某一历史记录即可
+    比较文件差异：
+        git diff xxx 只和暂存区比较
+        git diff HEAD xxx 和本地库比较
+        git diff HEAD^ xxx 和历史版本比较
+    分支：
+    git branch -v 查看
+    git branch xxx  创建
+    git checkout xxx 切换
+    合并：切换在接受修改的分支上，执行merge
+        git merge xxx(另一个分支)
+    合并冲突：同一文件，同一位置。两分支都修改了
+        文件内部增加冲突标记
+        手动修改异常部分 add 
+        然后commit不加文件名
